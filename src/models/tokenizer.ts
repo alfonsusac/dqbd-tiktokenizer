@@ -4,7 +4,6 @@ import {
 } from ".";
 import type { z } from "zod";
 import {
-  getHuggingfaceSegments,
   getTiktokenSegments,
   type Segment,
 } from "~/utils/segments";
@@ -78,7 +77,7 @@ export class TiktokenTokenizer implements Tokenizer {
   }
 }
 
-export async function createTokenizer(name: string): Promise<Tokenizer> {
+export function createTokenizer(name: string): Tokenizer {
   console.log("createTokenizer", name);
   const oaiEncoding = oaiEncodings.safeParse(name);
   if (oaiEncoding.success) {

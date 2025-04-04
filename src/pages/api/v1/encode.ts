@@ -4,8 +4,8 @@ import { z } from "zod";
 import { type AllOptions, oaiEncodings, allModels } from "~/models";
 import { createTokenizer } from "~/models/tokenizer";
 
-async function encode(model: AllOptions, text: string): Promise<ResponseType> {
-  const enc = await createTokenizer(model);
+export async function encode(model: AllOptions, text: string): Promise<ResponseType> {
+  const enc = createTokenizer(model);
   const r = enc.tokenize(text);
   return {
     name: r.name,
