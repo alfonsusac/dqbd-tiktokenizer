@@ -1,4 +1,3 @@
-// @ts-expect-error
 import wasm from "tiktoken/lite/tiktoken_bg.wasm?module";
 import model from "tiktoken/encoders/cl100k_base.json";
 import { init, Tiktoken } from "tiktoken/lite/init";
